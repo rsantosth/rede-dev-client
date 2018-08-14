@@ -10,12 +10,9 @@ RedeDevClientConfiguration.$inject = [
 function RedeDevClientConfiguration($stateProvider, $urlRouterProvider) {
 
     $stateProvider
-        .state('teste1', {
-            url: '/teste1',
-            templateUrl: `file://${__dirname}/views/teste1.html`
-        })
-        .state('teste2', {
-            url: '/teste2',
-            templateUrl: `file://${__dirname}/views/teste2.html`
+        .state('geradores', {
+            url: '/geradores',
+            templateUrl: `file://${__dirname}/components/geradores/geradores.view.html`,
+            controller: 'geradoresController'
         });        
 }

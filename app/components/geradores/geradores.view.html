@@ -1,0 +1,47 @@
+<div class="row">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">CPF</h4>
+                <div class="form-check">
+                    <label class="form-check-label">
+                        <input class="form-check-input" type="checkbox" ng-model="vm.pontuacaoCpf">
+                        Com Pontuação
+                    </label>
+                </div>                
+                <input type="text" ng-model="vm.numeroCpf" class="form-control text-center mt-2" />
+                <button type="button" ng-click="fn.gerarCpf();" class="btn btn-primary mt-3">Gerar</button>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">CNPJ</h4>
+                <div class="form-check">
+                    <label class="form-check-label">
+                        <input class="form-check-input" type="checkbox" ng-model="vm.pontuacaoCnpj">
+                        Com Pontuação
+                    </label>
+                </div>                
+                <input type="text" ng-model="vm.numeroCnpj" class="form-control text-center mt-2" />
+                <button type="button" ng-click="fn.gerarCnpj();" class="btn btn-primary mt-3">Gerar</button>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-12 mt-3">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">GUID</h4>
+                <div class="form-check">
+                    <label class="form-check-label">
+                        <input class="form-check-input" type="checkbox" ng-model="vm.pontuacaoGuid">
+                        Com Pontuação
+                    </label>
+                </div>                
+                <input type="text" ng-model="vm.valorGuid" class="form-control text-center mt-2" />
+                <button type="button" ng-click="fn.gerarGuid();" class="btn btn-primary mt-3">Gerar</button>
+            </div>
+        </div>
+    </div>       
+</div>

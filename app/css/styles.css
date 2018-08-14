@@ -1,0 +1,40 @@
+html, 
+body,
+.window {
+    height: 100%;
+}
+
+.pane {
+    height: 100%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    overflow-x: hidden;
+    padding-top: 20px;
+  }
+  
+  .sidebar {
+    width: 25%;
+    left: 0;
+    background-color: #444;
+    padding: 10px;
+  }
+  
+  .window-content {
+    width: 75%;
+    right: 0;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .nav-group-title {
+      font-size: 12px;
+  }
+  a.nav-group-item {
+      display: block;
+      padding-left: 15px;
+      text-decoration: none;
+  }
+  a.nav-group-item > i {
+      margin-right: 10px;
+  }

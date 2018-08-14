@@ -19,5 +19,8 @@
   "homepage": "https://github.com/rsantosth/rede-dev-client#readme",
   "dependencies": {
     "electron": "^1.6.1"
+  },
+  "devDependencies": {
+    "@fortawesome/fontawesome-free": "^5.2.0"
   }
 }

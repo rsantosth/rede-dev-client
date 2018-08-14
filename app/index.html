@@ -4,35 +4,31 @@
     <meta charset="UTF-8">
     <title>Rede Developer Client</title>
     <!-- Estilos -->
-    <link rel="stylesheet" href="./css/photon.min.css">
+    <link rel="stylesheet" href="../node_modules/@fortawesome/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/styles.css">
     <!-- Libs -->
     <script type="text/javascript" src="./libs/angular.min.js"></script>
     <script type="text/javascript" src="./libs/angular-ui-router.min.js"></script>
     <!-- Scripts -->
     <script type="text/javascript" src="./js/main.js"></script>
     <script type="text/javascript" src="./js/router.js"></script>
+    <!-- Controllers -->
+    <script type="text/javascript" src="./components/geradores/geradores.controller.js"></script>
 </head>
 <body>
     <div class="window">
-        <div class="window-content">
-            <div class="pane-group">
-                <div class="pane-sm sidebar">
-                    <nav class="nav-group">
-                        <h5 class="nav-group-title">Seção</h5>
-                        <a class="nav-group-item active" href="#!/teste1">
-                          <span class="icon icon-home"></span>
-                          Item 1
-                        </a>
-                        <a class="nav-group-item" href="#!/teste2">
-                          <span class="icon icon-download"></span>
-                          Item 2
-                        </a>
-                      </nav>
-                </div>
-                <div class="pane">
-                    <div ui-view></div>
-                </div>
-              </div>
+        <div class="pane sidebar">
+            <nav class="nav-group">
+                <h5 class="nav-group-title">Funções</h5>
+                <a class="nav-group-item" href="#!/geradores">
+                    <i class="fas fa-user"></i>
+                    Geradores
+                </a>
+            </nav>
+        </div>
+        <div class="pane window-content">
+            <div class="container" ui-view></div>
         </div>
     </div>
 </body>
