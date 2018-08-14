@@ -1,0 +1,23 @@
+{
+  "name": "rede-dev-client",
+  "version": "1.0.0",
+  "description": "Client helper para desenvolvimento de projetos na Rede",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rsantosth/rede-dev-client.git"
+  },
+  "author": "Roger Santos",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rsantosth/rede-dev-client/issues"
+  },
+  "homepage": "https://github.com/rsantosth/rede-dev-client#readme",
+  "dependencies": {
+    "electron": "^1.6.1"
+  }
+}
