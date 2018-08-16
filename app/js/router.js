@@ -14,5 +14,10 @@ function RedeDevClientConfiguration($stateProvider, $urlRouterProvider) {
             url: '/geradores',
             templateUrl: `file://${__dirname}/components/geradores/geradores.view.html`,
             controller: 'geradoresController'
-        });        
+        })
+        .state('listar-diretorios', {
+            url: '/listar-diretorios',
+            templateUrl: `file://${__dirname}/components/listar-diretorios/listar-diretorios.view.html`,
+            controller: 'listarDiretoriosController'
+        });         
 }

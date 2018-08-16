@@ -1,0 +1,32 @@
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-12 mb-1">
+                        <div class="form-check">
+                            <label class="form-check-label">
+                                <input class="form-check-input" type="checkbox" ng-model="vm.exibirPastas">
+                                Exibir Pastas
+                            </label>
+                        </div> 
+                    </div>               
+                    <div class="col-md-10 input-group">
+                        <input type="text" ng-model="vm.caminhoPasta" class="form-control" />
+                        <button type="button" ng-click="fn.abrirFolderDialog();" class="btn btn-primary">. . .</button>
+                    </div>
+                    <div class="col-md-2">
+                        <button type="button" ng-click="fn.listarArquivos();" class="btn btn-primary">Buscar</button>
+                    </div>
+                    <div class="col-md-12 mt-3">
+                        <textarea class="form-control"  ng-model="vm.listaArquivos" ng-list="&#10;" ng-trim="false" 
+                            ng-class="{'is-valid' : vm.buscaRealizada && vm.diretorioValido, 'is-invalid' : vm.buscaRealizada && !vm.diretorioValido}" rows="15"></textarea>
+                        <div ng-show="vm.buscaRealizada" ng-class="vm.diretorioValido ? 'valid-feedback' : 'invalid-feedback'">
+                            {{vm.mensagemBusca}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>  
+</div>
