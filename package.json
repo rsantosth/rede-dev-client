@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "electron ."
+    "start": "electron .",
+    "buildwin": "electron-packager . rede-dev-client --platform=win32 --arch=x64 --asar"
   },
   "repository": {
     "type": "git",
@@ -18,12 +19,13 @@
   },
   "homepage": "https://github.com/rsantosth/rede-dev-client#readme",
   "dependencies": {
-    "electron": "^1.6.1",
     "mkdirp": "^0.5.1",
     "moment": "^2.22.2",
     "simple-git": "^1.96.0"
   },
   "devDependencies": {
-    "@fortawesome/fontawesome-free": "^5.2.0"
+    "electron": "^1.6.1",
+    "@fortawesome/fontawesome-free": "^5.2.0",
+    "electron-packager": "^12.1.1"
   }
 }

@@ -21,3 +21,5 @@ coverage
 npm-debug.log
 .vscode/
 lint-errors.txt
+
+rede-dev-client-win32-x64/
