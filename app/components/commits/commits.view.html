@@ -1,0 +1,46 @@
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <p>Selecione o repositório:</p>
+                    </div>
+                    <div class="col-md-12 input-group">
+                        <input type="text" ng-model="vm.caminhoPasta" class="form-control" />
+                        <button type="button" ng-click="fn.abrirFolderDialog();" class="btn btn-primary">. . .</button>
+                    </div>
+                </div>
+                <div class="row mt-3" ng-show="vm.repositorioValido">
+                    <div class="col-md-6">
+                        <input type="text" class="form-control" ng-model="vm.commitId" placeholder="Commit ID">
+                        <small class="form-text text-muted">Para múltiplos commits, separar por ;</small>
+                    </div>
+                    <div class="col-md-2">
+                        <button class="btn btn-primary" ng-click="fn.buscarCommit();">Pesquisar</button>
+                    </div>
+                </div>
+                <div class="row" ng-show="vm.commitValido">
+                    <div class="col-md-12">
+                        <div style="height: 215px; overflow-y: auto;">
+                            <div class="list-group mt-3">
+                                <div ng-repeat="commit in vm.commitList" class="list-group-item list-group-item-action flex-column align-items-start">
+                                    <div class="d-flex w-100 justify-content-between">
+                                        <h5 class="mb-1">{{commit.hash}}</h5>
+                                    </div>
+                                    <p class="mb-1">{{commit.descricao}}</p>
+                                    <small class="text-muted">Autor: {{commit.autor}} - {{commit.data.format('DD/MM/YYYY')}}</small>
+                                </div>  
+                            </div>      
+                        </div>
+                    </div>
+                    <div class="col-md-12 mt-3">
+                        <button type="button" class="btn btn-primary" ng-click="fn.copiarArquivos();">Copiar Arquivos</button>
+                        <br/>
+                        <small>Essa função copia todos os arquivos dos commits selecionados em suas versões atuais do repositório.</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>  
+</div>

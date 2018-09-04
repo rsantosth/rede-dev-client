@@ -19,5 +19,10 @@ function RedeDevClientConfiguration($stateProvider, $urlRouterProvider) {
             url: '/listar-diretorios',
             templateUrl: `file://${__dirname}/components/listar-diretorios/listar-diretorios.view.html`,
             controller: 'listarDiretoriosController'
-        });         
+        })
+        .state('commits', {
+            url: '/commits',
+            templateUrl: `file://${__dirname}/components/commits/commits.view.html`,
+            controller: 'commitsController'
+        });
 }

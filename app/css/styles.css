@@ -27,6 +27,9 @@ body,
     padding-right: 10px;
   }
 
+  .nav-group {
+      margin-bottom: 20px;
+  }
   .nav-group-title {
       font-size: 12px;
   }

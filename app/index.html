@@ -16,6 +16,7 @@
     <!-- Controllers -->
     <script type="text/javascript" src="./components/geradores/geradores.controller.js"></script>
     <script type="text/javascript" src="./components/listar-diretorios/listar-diretorios.controller.js"></script>
+    <script type="text/javascript" src="./components/commits/commits.controller.js"></script>
 </head>
 <body>
     <div class="window">
@@ -31,6 +32,13 @@
                     Listar Diretórios
                 </a>                
             </nav>
+            <nav class="nav-group">
+                <h5 class="nav-group-title">Git</h5>
+                <a class="nav-group-item" href="#!/commits">
+                    <i class="fas fa-code-branch"></i>
+                    Commits
+                </a>             
+            </nav>            
         </div>
         <div class="pane window-content">
             <div class="container" ui-view></div>
