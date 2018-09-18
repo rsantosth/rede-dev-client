@@ -1,6 +1,7 @@
 const git = require('simple-git');
 const moment = require('moment');
 const mkdirp = require('mkdirp');
+const {shell} = require('electron')
 
 angular
     .module('redeDevClient')
@@ -15,6 +16,7 @@ function CommitsController($scope) {
         caminhoPasta: '',
         repositorioValido: false,
         commitValido: false,
+        executarPull: false,
         commitId: '',
         commitList: [],
         commitFiles: []
@@ -36,13 +38,28 @@ function CommitsController($scope) {
                         console.log(err);
                         return;
                     }
-                    
-                    $scope.vm.repositorioValido = isRepo;
-                    $scope.$apply();
 
                     if (!isRepo) {
                         alert('Não foi encontrado um repositório Git no diretório selecionado.');
                         return;
+                    }
+
+                    if ($scope.vm.executarPull) {
+                        $scope.$apply();
+                        git($scope.vm.caminhoPasta).pull(function(err, summary) {
+                            if (err) {
+                                alert('Ocorreu um erro ao tentar baixar as últimas atualizações.');
+                                console.log('erro ao executar git pull: ', err);
+                                return;
+                            }
+
+                            alert('Repositório atualizado com sucesso.')
+                            $scope.vm.repositorioValido = true;
+                            $scope.$apply();
+                        })
+                    } else {
+                        $scope.vm.repositorioValido = true;
+                        $scope.$apply();
                     }
                 });
             }
@@ -115,6 +132,7 @@ function CommitsController($scope) {
                 });
 
                 alert('Cópia de arquivos finalizada.')
+                shell.openItem(caminhoArquivos);
             }
         });
     }
