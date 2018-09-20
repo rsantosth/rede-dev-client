@@ -19,6 +19,7 @@ function CommitsController($scope) {
         executarPull: false,
         commitId: '',
         commitList: [],
+        commitLogs: [],
         commitFiles: []
     }
 
@@ -45,7 +46,6 @@ function CommitsController($scope) {
                     }
 
                     if ($scope.vm.executarPull) {
-                        $scope.$apply();
                         git($scope.vm.caminhoPasta).pull(function(err, summary) {
                             if (err) {
                                 alert('Ocorreu um erro ao tentar baixar as últimas atualizações.');
@@ -55,11 +55,11 @@ function CommitsController($scope) {
 
                             alert('Repositório atualizado com sucesso.')
                             $scope.vm.repositorioValido = true;
-                            $scope.$apply();
-                        })
+                            getCommitLogs();
+                        });
                     } else {
                         $scope.vm.repositorioValido = true;
-                        $scope.$apply();
+                        getCommitLogs();
                     }
                 });
             }
@@ -133,6 +133,28 @@ function CommitsController($scope) {
 
                 alert('Cópia de arquivos finalizada.')
                 shell.openItem(caminhoArquivos);
+            }
+        });
+    }
+
+    function getCommitLogs() {
+        git($scope.vm.caminhoPasta).log({ "max-count": 10 }, function(err, logSummary) {
+            if (err) {
+                console.log(err);
+                return;
+            }
+
+            if (logSummary.all && logSummary.all.length > 0) {
+                logSummary.all.forEach(function(itemLog) {
+                    $scope.vm.commitLogs.push({
+                        hash: itemLog.hash.substring(0, 8),
+                        autor: itemLog.author_name,
+                        data: moment(itemLog.date),
+                        descricao: itemLog.message
+                    });
+                });
+
+                $scope.$apply();
             }
         });
     }
