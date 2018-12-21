@@ -15,6 +15,11 @@ function RedeDevClientConfiguration($stateProvider, $urlRouterProvider) {
             templateUrl: `file://${__dirname}/components/geradores/geradores.view.html`,
             controller: 'geradoresController'
         })
+        .state('criptografia', {
+            url: '/criptografia',
+            templateUrl: `file://${__dirname}/components/criptografia/criptografia.view.html`,
+            controller: 'criptografiaController'
+        })        
         .state('listar-diretorios', {
             url: '/listar-diretorios',
             templateUrl: `file://${__dirname}/components/listar-diretorios/listar-diretorios.view.html`,

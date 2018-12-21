@@ -2,38 +2,47 @@
     <div class="col-md-6">
         <div class="card">
             <div class="card-body">
-                <h4 class="card-title">CPF</h4>
-                <div class="form-check">
+                <h4 class="card-title float-left">CPF</h4>
+                <a href="#" title="Copiar" ng-click="fn.copiar('numeroCpf');" class="float-right">
+                    <i class="far fa-copy" style="font-size: 26px;"></i>
+                </a>                
+                <div class="form-check" style="clear: both;">
                     <label class="form-check-label">
                         <input class="form-check-input" type="checkbox" ng-model="vm.pontuacaoCpf">
                         Com Pontuação
                     </label>
-                </div>                
+                </div>         
                 <input type="text" ng-model="vm.numeroCpf" class="form-control text-center mt-2" />
-                <button type="button" ng-click="fn.gerarCpf();" class="btn btn-primary mt-3">Gerar</button>
+                <button type="button" ng-click="fn.gerarCpf();" class="btn btn-primary mt-2">Gerar</button>
             </div>
         </div>
     </div>
     <div class="col-md-6">
         <div class="card">
             <div class="card-body">
-                <h4 class="card-title">CNPJ</h4>
-                <div class="form-check">
+                <h4 class="card-title float-left">CNPJ</h4>
+                <a href="#" title="Copiar" ng-click="fn.copiar('numeroCnpj');" class="float-right">
+                    <i class="far fa-copy" style="font-size: 26px;"></i>
+                </a>
+                <div class="form-check" style="clear: both;">
                     <label class="form-check-label">
                         <input class="form-check-input" type="checkbox" ng-model="vm.pontuacaoCnpj">
                         Com Pontuação
                     </label>
                 </div>                
                 <input type="text" ng-model="vm.numeroCnpj" class="form-control text-center mt-2" />
-                <button type="button" ng-click="fn.gerarCnpj();" class="btn btn-primary mt-3">Gerar</button>
+                <button type="button" ng-click="fn.gerarCnpj();" class="btn btn-primary mt-2">Gerar</button>
             </div>
         </div>
     </div>
     <div class="col-md-12 mt-3">
         <div class="card">
             <div class="card-body">
-                <h4 class="card-title">GUID</h4>
-                <div class="form-check">
+                <h4 class="card-title float-left">GUID</h4>
+                <a href="#" title="Copiar" ng-click="fn.copiar('valorGuid');" class="float-right">
+                    <i class="far fa-copy" style="font-size: 26px;"></i>
+                </a>                
+                <div class="form-check" style="clear: both;">
                     <label class="form-check-label">
                         <input class="form-check-input" type="checkbox" ng-model="vm.pontuacaoGuid">
                         Com Pontuação

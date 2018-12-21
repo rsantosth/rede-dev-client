@@ -18,9 +18,15 @@ function GeradoresController($scope) {
     };
 
     $scope.fn = {
+        copiar: Copiar,
         gerarCpf: GerarCpf,
         gerarCnpj: GerarCnpj,
         gerarGuid: GerarGuid
+    }
+
+    function Copiar(campo) {
+        const clip = require('clipboardy');
+        clip.writeSync($scope.vm[campo]);
     }
     
     function GerarCpf() {      
